@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gift Cards — Bikes Plus | Jensen Beach Bicycle Shop</title>
+<meta name="description" content="Buy a Bikes Plus eGift card online and use it in store. Any amount from $25 to $200. The perfect gift for any cyclist on the Treasure Coast."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16241f;--paper:#FBF7EF;--paper-2:#F2ECDE;
+    --leaf:#3F7D4E;--leaf-deep:#2C5E39;--citrus:#FF6A2B;--sky:#2E6E8E;
+    --line:#E2D9C6;--muted:#6E7B72;
+    --disp:'Barlow Condensed',sans-serif;--body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .brand-mark{width:34px;height:34px}
+  .brand-name{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+  .brand-name span{color:var(--leaf)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:.83rem;font-weight:600;color:var(--ink);transition:color .15s;white-space:nowrap}
+  .nav-links a:hover{color:var(--leaf)}
+  .nav-cta{background:var(--citrus);color:#fff;padding:9px 18px;border-radius:6px;font-weight:700;font-size:.83rem;text-decoration:none;white-space:nowrap}
+  .nav-cta:hover{background:#e85a1f}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+  @media(max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:13px 22px;width:100%;border-bottom:1px solid var(--line)}
+    .nav-links .nav-cta{margin:10px 22px;text-align:center}
+    .nav-toggle{display:block}
+  }
+  .giftwrap{max-width:560px;margin:0 auto;padding:70px 22px;text-align:center}
+  .gc-eyebrow{font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:14px}
+  .gc-card{background:linear-gradient(135deg,var(--leaf),var(--leaf-deep));color:#fff;border-radius:18px;padding:44px 34px;box-shadow:0 24px 60px rgba(22,36,31,.25);position:relative;overflow:hidden;margin-bottom:30px}
+  .gc-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .gc-card .label{font-family:var(--disp);font-weight:700;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:8px}
+  .gc-card h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.4rem,7vw,3.4rem);line-height:.95;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+  .gc-card .amts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .gc-card .amt{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:8px 16px;font-family:var(--disp);font-weight:800;font-size:1.3rem}
+  .gc-copy{font-size:1.05rem;color:var(--muted);margin-bottom:26px}
+  .gc-copy b{color:var(--ink)}
+  .btn{display:inline-block;padding:16px 38px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;background:var(--citrus);color:#fff;transition:transform .12s,background .15s}
+  .btn:hover{background:#e85a1f;transform:translateY(-2px)}
+  .gc-note{margin-top:18px;font-size:.85rem;color:var(--muted)}
+  footer{background:var(--ink);color:#7c8a7e;padding:30px 0;margin-top:40px;text-align:center;font-size:.78rem}
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="28" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <circle cx="72" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <path d="M28 68 L46 38 L66 38 M46 38 L60 68 M40 38 L52 38" fill="none" stroke="#FF6A2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="68" r="3" fill="#16241f"/><circle cx="72" cy="68" r="3" fill="#16241f"/>
+        </svg>
+        <span class="brand-name">BIKES<span>PLUS</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navlinks">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="brands.html">Brands</a>
+        <a href="rentals.html">Rentals &amp; Rides</a>
+        <a href="index.html#hours">Hours</a>
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="giftwrap">
+    <div class="gc-eyebrow">The perfect gift</div>
+    <div class="gc-card">
+      <div class="label">Bikes Plus</div>
+      <h1>eGift Card</h1>
+      <div>Any amount · buy online · use in store</div>
+      <div class="amts">
+        <span class="amt">$25</span><span class="amt">$50</span><span class="amt">$100</span><span class="amt">$150</span><span class="amt">$200</span>
+      </div>
+    </div>
+    <p class="gc-copy">Give the gift of a smoother ride. Buy a Bikes Plus <b>eGift card online</b> and use it in store on bikes, parts, accessories, or service.</p>
+    <a href="https://squareup.com/gift/FF6WNF8AEVKXR/order" target="_blank" rel="noopener" class="btn">Buy a gift card →</a>
+    <div class="gc-note">Purchased securely through Square. Redeemable in store.</div>
+  </main>
+
+  <footer>© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</footer>
+
+</body>
+</html>

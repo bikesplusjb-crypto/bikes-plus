@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Bikes Plus | Treasure Coast Bicycle Shop</title>
+<meta name="description" content="About Bikes Plus — your one-stop bicycle shop and mobile repair on Florida's Treasure Coast, in Jensen Beach. Sales, service, rentals, and expert repairs."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#16241f;--paper:#FBF7EF;--paper-2:#F2ECDE;--leaf:#3F7D4E;--leaf-deep:#2C5E39;--citrus:#FF6A2B;--sky:#2E6E8E;--line:#E2D9C6;--muted:#6E7B72;--disp:'Barlow Condensed',sans-serif;--body:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .brand-mark{width:34px;height:34px}
+  .brand-name{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+  .brand-name span{color:var(--leaf)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:.83rem;font-weight:600;color:var(--ink);transition:color .15s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a.active{color:var(--leaf)}
+  .nav-cta{background:var(--citrus);color:#fff;padding:9px 18px;border-radius:6px;font-weight:700;font-size:.83rem;text-decoration:none;white-space:nowrap}
+  .nav-cta:hover{background:#e85a1f}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+  @media(max-width:900px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{padding:13px 22px;width:100%;border-bottom:1px solid var(--line)}.nav-links .nav-cta{margin:10px 22px;text-align:center}.nav-toggle{display:block}}
+  .page-head{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .page-head::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(63,125,78,.35),transparent 45%),radial-gradient(circle at 10% 100%,rgba(46,110,142,.3),transparent 50%)}
+  .page-head-inner{position:relative;max-width:1140px;margin:0 auto;padding:64px 22px 56px}
+  .page-eyebrow{font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd3ab;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .page-eyebrow::before{content:'';width:26px;height:2px;background:var(--citrus)}
+  .page-head h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.6rem,7vw,4.5rem);line-height:.95;letter-spacing:.5px;text-transform:uppercase}
+  .section{padding:60px 0 20px}
+  .lead{font-size:1.3rem;line-height:1.5;max-width:60ch;margin-bottom:30px;color:var(--ink)}
+  .lead b{color:var(--leaf-deep)}
+  .body-copy{max-width:62ch}
+  .body-copy p{margin-bottom:18px;color:#3a463f}
+  .pill-row{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0}
+  @media(max-width:600px){.stats{grid-template-columns:1fr}}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;position:relative;overflow:hidden}
+  .stat::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--leaf)}
+  .stat:nth-child(2)::before{background:var(--citrus)}
+  .stat:nth-child(3)::before{background:var(--sky)}
+  .stat .big{font-family:var(--disp);font-weight:800;font-size:2.2rem;color:var(--ink);line-height:1}
+  .stat .lbl{font-size:.85rem;color:var(--muted);margin-top:4px}
+  .editnote{background:#FFF4E8;border:1px dashed var(--citrus);border-radius:8px;padding:13px 16px;font-size:.82rem;color:#9a5a2a;margin:14px 0}
+  .cta-strip{background:var(--leaf);color:#fff;border-radius:14px;padding:38px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:40px 0 0}
+  .cta-strip h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:.04em;text-transform:uppercase;line-height:1;margin-bottom:6px}
+  .cta-strip p{color:#dff0e3;max-width:44ch}
+  .btn{display:inline-block;padding:14px 26px;border-radius:7px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .12s,background .15s}
+  .cta-strip .btn{background:#fff;color:var(--leaf-deep)}
+  .cta-strip .btn:hover{background:var(--paper);transform:translateY(-2px)}
+  footer{background:var(--ink);color:#c4d0c6;padding:48px 0 30px;margin-top:64px}
+  .foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:30px}
+  .foot-brand p{font-size:.88rem;max-width:30ch;color:#9aa89c}
+  .foot-col h4{font-family:var(--disp);font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:12px}
+  .foot-col a{display:block;text-decoration:none;font-size:.88rem;color:#9aa89c;padding:4px 0;transition:color .15s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:#7c8a7e;text-align:center}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="28" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <circle cx="72" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <path d="M28 68 L46 38 L66 38 M46 38 L60 68 M40 38 L52 38" fill="none" stroke="#FF6A2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="68" r="3" fill="#16241f"/><circle cx="72" cy="68" r="3" fill="#16241f"/>
+        </svg>
+        <span class="brand-name">BIKES<span>PLUS</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navlinks">
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="brands.html">Brands</a>
+        <a href="rentals.html">Rentals &amp; Rides</a>
+        <a href="index.html#hours">Hours</a>
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="page-head-inner">
+      <div class="page-eyebrow">Who we are</div>
+      <h1>About Bikes Plus</h1>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="lead">Bikes Plus is the Treasure Coast's <b>one-stop bicycle shop and mobile repair</b>, right here in Jensen Beach.</p>
+
+      <div class="body-copy">
+        <p>Whether you're chasing a new personal best, cruising the beach, or just getting back on two wheels, we've got the bikes, parts, and know-how to keep you rolling. We carry most major brands, service everything from vintage steel to the newest electric bikes, and back every repair with our parts and labor guarantee.</p>
+        <p>And if you can't make it to the shop, we'll come to you — our mobile repair service covers the Treasure Coast, so a flat tire or a tune-up never has to wreck your week.</p>
+      </div>
+
+      <div class="editnote">✏️ Optional: add your shop's real story here — when you opened, who's behind the counter, what makes Bikes Plus different. A personal story builds trust fast. Tell me the details and I'll write it in.</div>
+
+      <div class="pill-row">
+        <div class="pill"><span class="dot"></span>Sales</div>
+        <div class="pill"><span class="dot"></span>Service & Repair</div>
+        <div class="pill"><span class="dot"></span>Mobile Repair</div>
+        <div class="pill"><span class="dot"></span>Rentals</div>
+        <div class="pill"><span class="dot"></span>Electric Bikes</div>
+        <div class="pill"><span class="dot"></span>Accessories</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="big">15+</div><div class="lbl">Brands carried</div></div>
+        <div class="stat"><div class="big">Mobile</div><div class="lbl">We come to you</div></div>
+        <div class="stat"><div class="big">100%</div><div class="lbl">Parts & labor guaranteed</div></div>
+      </div>
+
+      <div class="cta-strip">
+        <div>
+          <h2>Come say hello</h2>
+          <p>Stop by the shop in Jensen Beach Plaza, or reach out with a question.</p>
+        </div>
+        <a href="contact.html" class="btn">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="brand-name" style="font-family:var(--disp);font-weight:800;font-size:1.5rem;color:#fff">BIKES<span style="color:var(--leaf)">PLUS</span></div>
+          <p>The Treasure Coast's one-stop bicycle shop and mobile repair, in Jensen Beach.</p>
+        </div>
+        <div class="foot-col"><h4>Shop</h4><a href="services.html">Services</a><a href="brands.html">Brands</a><a href="rentals.html">Rentals &amp; Rides</a><a href="about.html">About</a></div>
+        <div class="foot-col"><h4>Visit</h4><a href="tel:7726925505">772-692-5505</a><a href="contact.html">879 NE Jensen Beach Blvd</a><a href="index.html#hours">Hours</a><a href="giftcard.html">Gift Cards</a></div>
+      </div>
+      <div class="foot-bottom">© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brands — Bikes Plus | Jensen Beach Bicycle Shop</title>
+<meta name="description" content="Bikes Plus carries most major bike brands — Cervélo, Marin, Fuji, Diamondback, Aventon, Retrospec, Biria, Sun, and Shimano components. Jensen Beach, Treasure Coast."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16241f;--paper:#FBF7EF;--paper-2:#F2ECDE;
+    --leaf:#3F7D4E;--leaf-deep:#2C5E39;--citrus:#FF6A2B;--sky:#2E6E8E;
+    --line:#E2D9C6;--muted:#6E7B72;
+    --disp:'Barlow Condensed',sans-serif;--body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+
+  /* NAV (shared) */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .brand-mark{width:34px;height:34px;flex-shrink:0}
+  .brand-name{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+  .brand-name span{color:var(--leaf)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:.83rem;font-weight:600;color:var(--ink);letter-spacing:.02em;transition:color .15s;white-space:nowrap}
+  .nav-links a:hover{color:var(--leaf)}
+  .nav-links a.active{color:var(--leaf)}
+  .nav-cta{background:var(--citrus);color:#fff;padding:9px 18px;border-radius:6px;font-weight:700;font-size:.83rem;text-decoration:none;white-space:nowrap;transition:transform .12s,background .15s}
+  .nav-cta:hover{background:#e85a1f;transform:translateY(-1px)}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+  @media(max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:13px 22px;width:100%;border-bottom:1px solid var(--line)}
+    .nav-links .nav-cta{margin:10px 22px;text-align:center}
+    .nav-toggle{display:block}
+  }
+
+  /* PAGE HEADER */
+  .page-head{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .page-head::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(63,125,78,.35),transparent 45%),radial-gradient(circle at 10% 100%,rgba(46,110,142,.3),transparent 50%)}
+  .page-head-inner{position:relative;max-width:1140px;margin:0 auto;padding:64px 22px 56px}
+  .page-eyebrow{font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd3ab;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .page-eyebrow::before{content:'';width:26px;height:2px;background:var(--citrus)}
+  .page-head h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.6rem,7vw,4.5rem);line-height:.95;letter-spacing:.5px;text-transform:uppercase}
+  .page-head p{font-size:1.1rem;color:#d7e0d8;max-width:46ch;margin-top:14px}
+
+  /* BRANDS GRID */
+  .section{padding:64px 0 20px}
+  .cat-label{font-family:var(--disp);font-weight:700;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf);margin:36px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  .cat-label:first-child{margin-top:0}
+  .brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.brand-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.brand-grid{grid-template-columns:1fr}}
+  .brand-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:11px;padding:22px;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s;position:relative;overflow:hidden}
+  .brand-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--leaf);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+  .brand-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(22,36,31,.1);border-color:#cfe0d3}
+  .brand-card:hover::before{transform:scaleX(1)}
+  .brand-card.nolink{cursor:default}
+  .brand-card.nolink:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .brand-card.nolink:hover::before{transform:scaleX(0)}
+  .brand-name-lg{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.03em;text-transform:uppercase;line-height:1;margin-bottom:6px}
+  .brand-cat{font-size:.82rem;color:var(--muted);font-weight:500}
+  .brand-link{margin-top:14px;font-size:.78rem;font-weight:700;color:var(--leaf);letter-spacing:.04em;text-transform:uppercase}
+
+  /* CTA */
+  .cta-strip{background:var(--leaf);color:#fff;border-radius:14px;padding:38px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:48px 0 0}
+  .cta-strip h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:.04em;text-transform:uppercase;line-height:1;margin-bottom:6px}
+  .cta-strip p{color:#dff0e3;max-width:44ch}
+  .btn{display:inline-block;padding:14px 26px;border-radius:7px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .12s,background .15s}
+  .cta-strip .btn{background:#fff;color:var(--leaf-deep)}
+  .cta-strip .btn:hover{background:var(--paper);transform:translateY(-2px)}
+
+  /* FOOTER (shared) */
+  footer{background:var(--ink);color:#c4d0c6;padding:48px 0 30px;margin-top:64px}
+  .foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:30px}
+  .foot-brand .brand-name{color:#fff;margin-bottom:8px}
+  .foot-brand p{font-size:.88rem;max-width:30ch;color:#9aa89c}
+  .foot-col h4{font-family:var(--disp);font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:12px}
+  .foot-col a{display:block;text-decoration:none;font-size:.88rem;color:#9aa89c;padding:4px 0;transition:color .15s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:#7c8a7e;text-align:center}
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="28" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <circle cx="72" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <path d="M28 68 L46 38 L66 38 M46 38 L60 68 M40 38 L52 38" fill="none" stroke="#FF6A2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="68" r="3" fill="#16241f"/><circle cx="72" cy="68" r="3" fill="#16241f"/>
+        </svg>
+        <span class="brand-name">BIKES<span>PLUS</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navlinks">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="brands.html" class="active">Brands</a>
+        <a href="rentals.html">Rentals &amp; Rides</a>
+        <a href="index.html#hours">Hours</a>
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-head">
+    <div class="page-head-inner">
+      <div class="page-eyebrow">What we carry</div>
+      <h1>Our brands</h1>
+      <p>All the major players — and more. We stock and service most major bicycle brands, plus the components that keep them running.</p>
+    </div>
+  </header>
+
+  <!-- BRANDS -->
+  <section class="section">
+    <div class="wrap">
+
+      <div class="cat-label">Bikes</div>
+      <div class="brand-grid">
+        <a class="brand-card" href="https://www.cervelo.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Cervélo</div>
+          <div class="brand-cat">Performance road & tri</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.marinbikes.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Marin</div>
+          <div class="brand-cat">Mountain & hybrid</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.fujibikes.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Fuji</div>
+          <div class="brand-cat">Road, hybrid & city</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.diamondback.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Diamondback</div>
+          <div class="brand-cat">Mountain & all-around</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.biria.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Biria</div>
+          <div class="brand-cat">Comfort & easy-boarding</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.sun.bike" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Sun</div>
+          <div class="brand-cat">Cruisers, trikes & adaptive</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://www.retrospec.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Retrospec</div>
+          <div class="brand-cat">City & lifestyle bikes</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+      </div>
+
+      <div class="cat-label">Electric</div>
+      <div class="brand-grid">
+        <a class="brand-card" href="https://www.aventon.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Aventon</div>
+          <div class="brand-cat">Electric bikes — sales & service</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://macfoxbike.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Macfox</div>
+          <div class="brand-cat">Electric — moped-style & commuter</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://bakcou.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Bakcou</div>
+          <div class="brand-cat">Electric — hunting & off-road</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://zoozbikes.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Zooz</div>
+          <div class="brand-cat">Electric bikes</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <a class="brand-card" href="https://raevbike.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Raev</div>
+          <div class="brand-cat">Electric bikes</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+      </div>
+
+      <div class="cat-label">Components & parts</div>
+      <div class="brand-grid">
+        <a class="brand-card" href="https://www.shimano.com" target="_blank" rel="noopener">
+          <div class="brand-name-lg">Shimano</div>
+          <div class="brand-cat">Drivetrains, brakes & components</div>
+          <div class="brand-link">Visit site →</div>
+        </a>
+        <div class="brand-card nolink">
+          <div class="brand-name-lg">SRAM</div>
+          <div class="brand-cat">Drivetrains & components</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-strip">
+        <div>
+          <h2>Don't see your brand?</h2>
+          <p>We work with multiple distributors and can source most major brands and parts. Just ask.</p>
+        </div>
+        <a href="contact.html" class="btn">Ask us about a brand</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="brand-name" style="font-family:var(--disp);font-weight:800;font-size:1.5rem">BIKES<span style="color:var(--leaf)">PLUS</span></div>
+          <p>The Treasure Coast's one-stop bicycle shop and mobile repair, in Jensen Beach.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Shop</h4>
+          <a href="services.html">Services</a>
+          <a href="brands.html">Brands</a>
+          <a href="rentals.html">Rentals &amp; Rides</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="foot-col">
+          <h4>Visit</h4>
+          <a href="tel:7726925505">772-692-5505</a>
+          <a href="contact.html">879 NE Jensen Beach Blvd</a>
+          <a href="index.html#hours">Hours</a>
+          <a href="contact.html">Gift Cards</a>
+        </div>
+      </div>
+      <div class="foot-bottom">© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

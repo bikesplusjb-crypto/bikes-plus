@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — Bikes Plus | Jensen Beach Bicycle Shop & Mobile Repair</title>
+<meta name="description" content="Contact Bikes Plus — 879 NE Jensen Beach Blvd, Jensen Beach FL 34957. Call 772-692-5505. Mobile services must be called in and confirmed."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16241f;--paper:#FBF7EF;--paper-2:#F2ECDE;
+    --leaf:#3F7D4E;--leaf-deep:#2C5E39;--citrus:#FF6A2B;--sky:#2E6E8E;
+    --line:#E2D9C6;--muted:#6E7B72;
+    --disp:'Barlow Condensed',sans-serif;--body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .brand-mark{width:34px;height:34px}
+  .brand-name{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+  .brand-name span{color:var(--leaf)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:.83rem;font-weight:600;color:var(--ink);transition:color .15s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a.active{color:var(--leaf)}
+  .nav-cta{background:var(--citrus);color:#fff;padding:9px 18px;border-radius:6px;font-weight:700;font-size:.83rem;text-decoration:none;white-space:nowrap}
+  .nav-cta:hover{background:#e85a1f}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+  @media(max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:13px 22px;width:100%;border-bottom:1px solid var(--line)}
+    .nav-links .nav-cta{margin:10px 22px;text-align:center}
+    .nav-toggle{display:block}
+  }
+  .page-head{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .page-head::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(63,125,78,.35),transparent 45%),radial-gradient(circle at 10% 100%,rgba(46,110,142,.3),transparent 50%)}
+  .page-head-inner{position:relative;max-width:1140px;margin:0 auto;padding:56px 22px 48px}
+  .page-eyebrow{font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd3ab;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .page-eyebrow::before{content:'';width:26px;height:2px;background:var(--citrus)}
+  .page-head h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.6rem,7vw,4.5rem);line-height:.95;letter-spacing:.5px;text-transform:uppercase}
+
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;padding:56px 0 20px}
+  @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
+  .info-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+  .info-card h2{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+  .contact-line{display:flex;gap:11px;align-items:flex-start;margin-bottom:18px;font-size:.98rem}
+  .contact-line .ico{color:var(--leaf);flex-shrink:0;font-size:1.15rem;line-height:1.4}
+  .contact-line a{color:var(--ink);text-decoration:none;font-weight:600}
+  .contact-line a:hover{color:var(--leaf)}
+  .hours-mini{margin-top:6px;padding-top:18px;border-top:1px solid var(--line)}
+  .hours-mini .hr{display:flex;justify-content:space-between;font-size:.9rem;padding:5px 0}
+  .hours-mini .hr .t{color:var(--muted)}
+  .hours-mini .hr.closed .t{color:var(--citrus);font-weight:600}
+  .note-box{margin-top:18px;padding:13px 15px;background:var(--paper-2);border-radius:8px;font-size:.85rem;color:var(--muted);line-height:1.5}
+  .note-box b{color:var(--ink)}
+
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+  .form-card h2{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+  .form-card .form-sub{font-size:.92rem;color:var(--muted);margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.8rem;font-weight:600;margin-bottom:5px;color:var(--ink)}
+  .field input,.field textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-family:var(--body);font-size:.95rem;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s}
+  .field input:focus,.field textarea:focus{border-color:var(--leaf)}
+  .field textarea{resize:vertical;min-height:110px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:480px){.field-row{grid-template-columns:1fr}}
+  .submit-btn{width:100%;padding:14px;border:0;border-radius:8px;background:var(--citrus);color:#fff;font-family:var(--body);font-weight:700;font-size:1rem;cursor:pointer;transition:background .15s,transform .12s}
+  .submit-btn:hover{background:#e85a1f;transform:translateY(-1px)}
+  .form-fine{font-size:.78rem;color:var(--muted);margin-top:12px;text-align:center}
+
+  footer{background:var(--ink);color:#7c8a7e;padding:30px 0;margin-top:56px;text-align:center;font-size:.78rem}
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="28" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <circle cx="72" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
+          <path d="M28 68 L46 38 L66 38 M46 38 L60 68 M40 38 L52 38" fill="none" stroke="#FF6A2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="68" r="3" fill="#16241f"/><circle cx="72" cy="68" r="3" fill="#16241f"/>
+        </svg>
+        <span class="brand-name">BIKES<span>PLUS</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navlinks">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="brands.html">Brands</a>
+        <a href="rentals.html">Rentals &amp; Rides</a>
+        <a href="index.html#hours">Hours</a>
+        <a href="contact.html" class="nav-cta active">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="page-head-inner">
+      <div class="page-eyebrow">We're ready to help</div>
+      <h1>Contact us</h1>
+    </div>
+  </header>
+
+  <section class="wrap">
+    <div class="contact-grid">
+
+      <div class="info-card">
+        <h2>Visit the shop</h2>
+        <div class="contact-line"><span class="ico">📍</span><span>879 NE Jensen Beach Blvd<br/>Jensen Beach, FL 34957<br/><span style="color:var(--muted);font-size:.88rem">(Jensen Beach Plaza)</span></span></div>
+        <div class="contact-line"><span class="ico">📞</span><a href="tel:7726925505">772-692-5505</a></div>
+
+        <div class="hours-mini">
+          <div class="hr"><span>Mon – Fri</span><span class="t">10am – 5pm</span></div>
+          <div class="hr"><span>Saturday</span><span class="t">10am – 4pm</span></div>
+          <div class="hr closed"><span>Sunday</span><span class="t">Closed</span></div>
+        </div>
+
+        <div class="note-box"><b>Mobile services</b> must be called in and confirmed in advance. Tuesdays, in-shop staff may be out on mobile repair calls — call ahead.</div>
+      </div>
+
+      <div class="form-card">
+        <h2>Send us a message</h2>
+        <div class="form-sub">Questions about a repair, a rental, or a bike? Drop us a line and we'll get back to you.</div>
+
+        <!-- ============================================================
+             TO MAKE THIS FORM WORK:
+             1. Go to formspree.io, make a free account, create a form.
+             2. Copy your form ID (looks like "xyzabcde").
+             3. Replace YOUR_FORM_ID below with it.
+             Until then, the form looks right but won't send.
+        ============================================================= -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+          <div class="form-fine">We'll never share your info. For mobile service, please call to confirm.</div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</footer>
+
+</body>
+</html>
