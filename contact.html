@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact — Bikes Plus | Jensen Beach Bicycle Shop & Mobile Repair</title>
-<meta name="description" content="Contact Bikes Plus — 879 NE Jensen Beach Blvd, Jensen Beach FL 34957. Call 772-692-5505. Mobile services must be called in and confirmed."/>
+<title>Contact — Bikes Plus | Jensen Beach Bicycle Shop &amp; Mobile Repair</title>
+<meta name="description" content="Contact Bikes Plus — 879 NE Jensen Beach Blvd, Jensen Beach FL 34957. Call 772-692-5505. Mobile repair service call $30 within 7 miles, $55 beyond."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -59,6 +59,17 @@
   .hours-mini .hr.closed .t{color:var(--citrus);font-weight:600}
   .note-box{margin-top:18px;padding:13px 15px;background:var(--paper-2);border-radius:8px;font-size:.85rem;color:var(--muted);line-height:1.5}
   .note-box b{color:var(--ink)}
+
+  /* mobile service call fees */
+  .mobile-box{margin-top:18px;padding:18px;background:var(--paper-2);border:1px solid var(--line);border-radius:10px}
+  .mobile-box h3{font-family:var(--disp);font-weight:800;font-size:1.15rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+  .mobile-box .sub{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+  .fee-row{display:flex;gap:10px;flex-wrap:wrap}
+  .fee{background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px 15px;flex:1;min-width:132px}
+  .fee-label{display:block;font-family:var(--disp);font-weight:700;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .fee-amt{font-family:var(--disp);font-weight:800;font-size:1.7rem;line-height:1;color:var(--leaf)}
+  .fee-note{font-size:.75rem;color:var(--muted);margin-left:5px}
+  .fee-fine{font-size:.8rem;color:var(--muted);font-style:italic;margin-top:12px;line-height:1.5}
 
   .form-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
   .form-card h2{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
@@ -123,7 +134,17 @@
           <div class="hr closed"><span>Sunday</span><span class="t">Closed</span></div>
         </div>
 
-        <div class="note-box"><b>Mobile services</b> must be called in and confirmed in advance. Tuesdays, in-shop staff may be out on mobile repair calls — call ahead.</div>
+        <div class="mobile-box">
+          <h3>🚐 Mobile repair</h3>
+          <div class="sub">We come to you, anywhere on the Treasure Coast.</div>
+          <div class="fee-row">
+            <div class="fee"><span class="fee-label">Within 7 miles</span><span class="fee-amt">$30</span><span class="fee-note">service call</span></div>
+            <div class="fee"><span class="fee-label">Over 7 miles</span><span class="fee-amt">$55</span><span class="fee-note">service call</span></div>
+          </div>
+          <p class="fee-fine">The service call fee covers the trip out and is charged in addition to parts and labor. Mobile service must be called in and confirmed in advance.</p>
+        </div>
+
+        <div class="note-box">On Tuesdays, in-shop staff may be out on mobile repair calls — <b>please call ahead</b> before driving over.</div>
       </div>
 
       <div class="form-card">
