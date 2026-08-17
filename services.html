@@ -45,6 +45,12 @@
   .svc-ico{font-size:2.2rem;line-height:1}
   .svc-item h3{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
   .svc-item p{font-size:.96rem;color:var(--muted)}
+  .fee-row{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 10px}
+  .fee{background:var(--paper-2);border:1px solid var(--line);border-radius:9px;padding:11px 17px;min-width:148px}
+  .fee-label{display:block;font-family:var(--disp);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .fee-amt{font-family:var(--disp);font-weight:800;font-size:1.85rem;line-height:1;color:var(--leaf)}
+  .fee-note{font-size:.78rem;color:var(--muted);margin-left:6px}
+  .fee-fine{font-size:.85rem;color:var(--muted);font-style:italic}
   .guarantee{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:26px;text-align:center;margin-top:30px}
   .guarantee h3{font-family:var(--disp);font-weight:800;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
   .guarantee p{color:var(--muted);max-width:54ch;margin:0 auto}
@@ -116,7 +122,15 @@
         </div>
         <div class="svc-item">
           <div class="svc-ico">🚐</div>
-          <div><h3>Mobile Repair</h3><p>Can't make it in? We come to you, anywhere on the Treasure Coast. Mobile service must be called in and confirmed in advance.</p></div>
+          <div>
+            <h3>Mobile Repair</h3>
+            <p>Can't make it in? We come to you, anywhere on the Treasure Coast. Mobile service must be called in and confirmed in advance.</p>
+            <div class="fee-row">
+              <div class="fee"><span class="fee-label">Within 7 miles</span><span class="fee-amt">$30</span><span class="fee-note">service call</span></div>
+              <div class="fee"><span class="fee-label">Over 7 miles</span><span class="fee-amt">$55</span><span class="fee-note">service call</span></div>
+            </div>
+            <p class="fee-fine">The service call fee covers the trip out and is charged in addition to parts and labor.</p>
+          </div>
         </div>
       </div>
 
@@ -128,7 +142,7 @@
       <div class="cta-strip">
         <div>
           <h2>Need a repair or tune-up?</h2>
-          <p>Bring it in or call to set up mobile service. We'll get you rolling again.</p>
+          <p>Bring it in, or call to set up mobile service — $30 within 7 miles, $55 beyond. We'll get you rolling again.</p>
         </div>
         <a href="tel:7726925505" class="btn">Call 772-692-5505</a>
       </div>
