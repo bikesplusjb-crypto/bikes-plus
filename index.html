@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Bikes Plus — Treasure Coast Bicycle Shop &amp; Mobile Repair</title>
 <meta name="description" content="Bikes Plus in Jensen Beach — sales, service, accessories, and mobile bike repair on the Treasure Coast. Electric bikes, repairs, and expert tuning. Mobile service call $30 within 7 miles, $55 beyond."/>
+<link rel="canonical" href="https://bikesplusmore.com/"/>
+
+<!-- Social preview. Without these, a link shared to Facebook or texted to
+     a customer shows a bare URL with no title or image. -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Bikes Plus"/>
+<meta property="og:title" content="Bikes Plus — Treasure Coast Bicycle Shop &amp; Mobile Repair"/>
+<meta property="og:description" content="Sales, service, repairs and mobile bike repair in Jensen Beach, FL. We come to you."/>
+<meta property="og:url" content="https://bikesplusmore.com/"/>
+<!-- TODO: drop a 1200x630 storefront photo at /og.jpg and this starts working -->
+<meta property="og:image" content="https://bikesplusmore.com/og.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,10 +41,19 @@
   a{color:inherit}
   .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
 
+  /* Keyboard focus. Without this, tabbing through the nav shows nothing
+     on some browsers and the page is unusable without a mouse. */
+  a:focus-visible,button:focus-visible{outline:3px solid var(--citrus);outline-offset:3px;border-radius:3px}
+
   /* Sticky nav is 59px tall; anchored sections need clearance or the
      heading lands underneath it. scroll-margin-top does that without
      touching layout. */
   section[id],div[id]{scroll-margin-top:78px}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important}
+  }
 
   /* NAV */
   .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -188,7 +210,7 @@
         </svg>
         <span class="brand-name">BIKES<span>PLUS</span></span>
       </a>
-      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+      <button class="nav-toggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button>
       <div class="nav-links" id="navlinks">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -223,7 +245,7 @@
     </div>
   </header>
 
-  <!-- ABOUT — new. The nav pointed at #about and nothing was here. -->
+  <!-- ABOUT -->
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-eyebrow">Who we are</div>
@@ -276,36 +298,35 @@
     </div>
   </section>
 
-  <!-- BRANDS — new. The nav pointed at #brands and nothing was here.
-       EDIT THIS: replace the tags below with the brands you actually
-       stock. Delete any you don't carry. -->
+  <!-- BRANDS
+       The brand-name chips are COMMENTED OUT on purpose. Naming a brand you
+       don't stock brings people in asking for it and you lose the sale twice.
+       Uncomment the block and edit it down to what's actually on your floor,
+       or leave it as-is — the copy below is true either way. -->
   <section class="section" id="brands">
     <div class="wrap">
       <div class="section-eyebrow">What we carry</div>
       <h2 class="section-h">Brands &amp; parts</h2>
       <p class="section-sub">We carry most major bike shop brands, and we work with multiple distributors — so if we don't have it on the shelf, we can usually get it.</p>
       <div class="brand-note">
+        <!--
         <div class="brand-tags">
-          <span class="brand-tag">Shimano</span>
-          <span class="brand-tag">Continental</span>
-          <span class="brand-tag">Panaracer</span>
-          <span class="brand-tag">Vittoria</span>
-          <span class="brand-tag">WTB</span>
-          <span class="brand-tag">Kryptonite</span>
-          <span class="brand-tag">CatEye</span>
-          <span class="brand-tag">Lazer</span>
-          <span class="brand-tag">Giro</span>
-          <span class="brand-tag">Bell</span>
+          <span class="brand-tag">Brand name</span>
+          <span class="brand-tag">Brand name</span>
+          <span class="brand-tag">Brand name</span>
         </div>
-        <p>Looking for something specific? Give us a call — with multiple distributors we can source nearly any part, and we'll tell you straight away whether we can get it and how long it'll take.</p>
+        -->
+        <p>We service every make and model, including bikes we didn't sell you. Tires, tubes, chains, cassettes, brake pads, cables and shifters are stocked; anything else we order in.</p>
+        <p>Looking for something specific? Give us a call — we'll tell you straight away whether we can get it and how long it'll take.</p>
         <p><a href="tel:7726925505" class="btn btn-primary" style="margin-top:6px">Call 772-692-5505</a></p>
       </div>
     </div>
   </section>
 
-  <!-- RENTALS — new. The nav pointed at #rentals and nothing was here.
-       EDIT THIS: add your actual rental rates if you want them public,
-       or leave it as "call for rates". -->
+  <!-- RENTALS
+       Rates are deliberately not published — they change by season and you
+       don't want to be held to a number from last winter. If you'd rather
+       show them, replace the .rent-cta copy below. -->
   <section class="section section-alt" id="rentals">
     <div class="wrap">
       <div class="section-eyebrow">Rentals &amp; rides</div>
@@ -361,8 +382,9 @@
         </div>
         <div class="info-card" id="contact">
           <h3>📍 Visit / Contact</h3>
-          <div class="contact-line"><span class="ico">📍</span><span>879 NE Jensen Beach Boulevard<br/>Jensen Beach, FL 34957<br/><span style="color:var(--muted);font-size:.88rem">(Jensen Beach Plaza)</span></span></div>
+          <div class="contact-line"><span class="ico">📍</span><span><a href="https://maps.google.com/?q=879+NE+Jensen+Beach+Blvd,+Jensen+Beach,+FL+34957" target="_blank" rel="noopener">879 NE Jensen Beach Boulevard<br/>Jensen Beach, FL 34957</a><br/><span style="color:var(--muted);font-size:.88rem">(Jensen Beach Plaza)</span></span></div>
           <div class="contact-line"><span class="ico">📞</span><a href="tel:7726925505">772-692-5505</a></div>
+          <div class="contact-line"><span class="ico">✉️</span><a href="mailto:bikesplusjb@gmail.com">bikesplusjb@gmail.com</a></div>
           <div class="tuesday-note"><b>Mobile services</b> must be called in and confirmed in advance.</div>
         </div>
       </div>
@@ -387,27 +409,65 @@
         <div class="foot-col">
           <h4>Visit</h4>
           <a href="tel:7726925505">772-692-5505</a>
-          <a href="#contact">879 NE Jensen Beach Blvd</a>
+          <a href="https://maps.google.com/?q=879+NE+Jensen+Beach+Blvd,+Jensen+Beach,+FL+34957" target="_blank" rel="noopener">879 NE Jensen Beach Blvd</a>
           <a href="#hours">Hours</a>
-          <a href="#contact">Gift Cards</a>
+          <!-- "Gift Cards" removed: it pointed at #contact, which says nothing
+               about gift cards. Put it back only with a real gift-card line. -->
         </div>
       </div>
       <div class="foot-bottom">© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</div>
     </div>
   </footer>
 
-<script>
-/* Close the mobile menu after a link is tapped.
+<!-- Local business markup. This is what feeds the Google side panel —
+     name, phone, address, hours. Keep it in sync with the Hours card above. -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BicycleStore",
+  "name":"Bikes Plus",
+  "url":"https://bikesplusmore.com/",
+  "telephone":"+1-772-692-5505",
+  "email":"bikesplusjb@gmail.com",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"879 NE Jensen Beach Blvd",
+    "addressLocality":"Jensen Beach",
+    "addressRegion":"FL",
+    "postalCode":"34957",
+    "addressCountry":"US"
+  },
+  "areaServed":"Treasure Coast, Florida",
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"17:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}
+  ]
+}
+</script>
 
-   Without this the menu stays open on top of the section it just
-   scrolled to, so on a phone the link appears to do nothing — you
-   land in the right place but the open menu is covering it. The
-   toggle button itself is excluded so it keeps working normally. */
+<script>
+/* Close the mobile menu after a link is tapped, and keep aria-expanded
+   honest for screen readers.
+
+   Without the close, the menu stays open on top of the section it just
+   scrolled to, so on a phone the link appears to do nothing — you land in
+   the right place but the open menu is covering it. */
 (function(){
   var nav = document.getElementById('navlinks');
-  if(!nav) return;
+  var btn = document.getElementById('navtoggle');
+  if(!nav || !btn) return;
+
+  function setOpen(open){
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  btn.addEventListener('click', function(){
+    setOpen(!nav.classList.contains('open'));
+  });
+
   nav.addEventListener('click', function(e){
-    if(e.target.tagName === 'A') nav.classList.remove('open');
+    if(e.target.tagName === 'A') setOpen(false);
   });
 })();
 </script>
