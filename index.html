@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bikes Plus — Treasure Coast Bicycle Shop & Mobile Repair</title>
+<title>Bikes Plus — Treasure Coast Bicycle Shop &amp; Mobile Repair</title>
 <meta name="description" content="Bikes Plus in Jensen Beach — sales, service, accessories, and mobile bike repair on the Treasure Coast. Electric bikes, repairs, and expert tuning. Mobile service call $30 within 7 miles, $55 beyond."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,11 @@
   body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit}
   .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+
+  /* Sticky nav is 59px tall; anchored sections need clearance or the
+     heading lands underneath it. scroll-margin-top does that without
+     touching layout. */
+  section[id],div[id]{scroll-margin-top:78px}
 
   /* NAV */
   .nav{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -78,8 +83,9 @@
   .hero-card .row.now .v{color:var(--leaf)}
   .hero-card .note{margin-top:14px;font-size:.78rem;color:var(--muted);line-height:1.5}
 
-  /* SERVICES */
+  /* SECTIONS */
   .section{padding:78px 0}
+  .section-alt{background:var(--paper-2)}
   .section-eyebrow{font-family:var(--disp);font-weight:700;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:10px}
   .section-h{font-family:var(--disp);font-weight:800;font-size:clamp(2rem,5vw,3rem);line-height:1;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
   .section-sub{font-size:1.05rem;color:var(--muted);max-width:52ch;margin-bottom:38px}
@@ -95,6 +101,37 @@
   .svc-icon{font-size:1.9rem;margin-bottom:12px;line-height:1}
   .svc h3{font-family:var(--disp);font-weight:700;font-size:1.25rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:7px}
   .svc p{font-size:.9rem;color:var(--muted)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
+  .about-body p{font-size:1.02rem;color:var(--muted);margin-bottom:16px;max-width:56ch}
+  .about-body p:last-child{margin-bottom:0}
+  .about-body strong{color:var(--ink)}
+  .about-points{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px}
+  .about-point{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+  .about-point:last-child{border-bottom:0;padding-bottom:0}
+  .about-point:first-child{padding-top:0}
+  .about-point .tick{color:var(--leaf);font-weight:800;flex-shrink:0;line-height:1.5}
+  .about-point span{font-size:.95rem}
+
+  /* BRANDS */
+  .brand-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px;max-width:62ch}
+  .brand-note p{color:var(--muted);font-size:1rem;margin-bottom:14px}
+  .brand-note p:last-child{margin-bottom:0}
+  .brand-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
+  .brand-tag{background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-family:var(--disp);font-weight:700;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+
+  /* RENTALS */
+  .rent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px}
+  @media(max-width:860px){.rent-grid{grid-template-columns:1fr}}
+  .rent{background:#fff;border:1px solid var(--line);border-radius:11px;padding:24px}
+  .rent h3{font-family:var(--disp);font-weight:700;font-size:1.25rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:7px}
+  .rent p{font-size:.92rem;color:var(--muted)}
+  .rent-cta{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .rent-cta p{font-size:.98rem;color:var(--muted);max-width:52ch}
+  .rent-cta b{color:var(--ink)}
+  .rent-cta .btn-primary{color:#fff}
 
   /* MOBILE REPAIR STRIP */
   .strip{background:var(--leaf);color:#fff;border-radius:14px;padding:40px 36px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
@@ -137,12 +174,12 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:#7c8a7e;text-align:center}
 </style>
 </head>
-<body>
+<body id="top">
 
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="brand">
+      <a href="#top" class="brand">
         <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
           <circle cx="28" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
           <circle cx="72" cy="68" r="20" fill="none" stroke="#3F7D4E" stroke-width="5"/>
@@ -168,7 +205,7 @@
     <div class="hero-inner">
       <div>
         <div class="hero-eyebrow">Jensen Beach · Treasure Coast</div>
-        <h1>Your one-stop<br/><span class="accent">bike shop</span><br/>& mobile repair</h1>
+        <h1>Your one-stop<br/><span class="accent">bike shop</span><br/>&amp; mobile repair</h1>
         <p class="lede">Sales, service, and expert repairs — plus we come to you. From everyday commuters to electric bikes, Bikes Plus keeps the Treasure Coast rolling.</p>
         <div class="hero-btns">
           <a href="#services" class="btn btn-primary">Explore our services</a>
@@ -178,16 +215,38 @@
       <div class="hero-card">
         <h3>Full-service bike shop</h3>
         <div class="sub">Sales, service, and repairs — all under one roof</div>
-        <div class="row"><span class="d">Tune-ups & repairs</span><span class="v">Parts & labor guaranteed</span></div>
-        <div class="row"><span class="d">Electric bikes</span><span class="v">Sales & service</span></div>
+        <div class="row"><span class="d">Tune-ups &amp; repairs</span><span class="v">Parts &amp; labor guaranteed</span></div>
+        <div class="row"><span class="d">Electric bikes</span><span class="v">Sales &amp; service</span></div>
         <div class="row now"><span class="d">Mobile repair</span><span class="v">From $30 · we come to you</span></div>
         <div class="note">Riding saves on gas and keeps you healthy. Come find the perfect ride for your next adventure.</div>
       </div>
     </div>
   </header>
 
+  <!-- ABOUT — new. The nav pointed at #about and nothing was here. -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-eyebrow">Who we are</div>
+      <h2 class="section-h">Your local cycling hub</h2>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>Bikes Plus is a <strong>locally owned, full-service bike shop</strong> in Jensen Beach, serving riders across the Treasure Coast. Whether you ride for fun, fitness, commuting or adventure, we're here to keep you rolling.</p>
+          <p>We handle everything from flat tires to complete overhauls, and we service all makes and models — not just what we sell. With multiple distributors behind us, we can source nearly any part and get you back on the road fast.</p>
+          <p>And if you can't make it in, our mobile repair unit comes to you — at home, at work, or wherever your ride left you stranded.</p>
+        </div>
+        <div class="about-points">
+          <div class="about-point"><span class="tick">✓</span><span>Friendly, knowledgeable staff</span></div>
+          <div class="about-point"><span class="tick">✓</span><span>Fast turnaround on repairs</span></div>
+          <div class="about-point"><span class="tick">✓</span><span>Parts and labor guaranteed</span></div>
+          <div class="about-point"><span class="tick">✓</span><span>Convenient mobile service</span></div>
+          <div class="about-point"><span class="tick">✓</span><span>Locally owned and community-focused</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
-  <section class="section" id="services">
+  <section class="section section-alt" id="services">
     <div class="wrap">
       <div class="section-eyebrow">What we do</div>
       <h2 class="section-h">Your go-to one-stop shop</h2>
@@ -195,7 +254,7 @@
       <div class="svc-grid">
         <div class="svc">
           <div class="svc-icon">🔧</div>
-          <h3>Repair & Servicing</h3>
+          <h3>Repair &amp; Servicing</h3>
           <p>With multiple distributors, we have access to nearly every part to get you back on the road fast.</p>
         </div>
         <div class="svc">
@@ -217,8 +276,64 @@
     </div>
   </section>
 
+  <!-- BRANDS — new. The nav pointed at #brands and nothing was here.
+       EDIT THIS: replace the tags below with the brands you actually
+       stock. Delete any you don't carry. -->
+  <section class="section" id="brands">
+    <div class="wrap">
+      <div class="section-eyebrow">What we carry</div>
+      <h2 class="section-h">Brands &amp; parts</h2>
+      <p class="section-sub">We carry most major bike shop brands, and we work with multiple distributors — so if we don't have it on the shelf, we can usually get it.</p>
+      <div class="brand-note">
+        <div class="brand-tags">
+          <span class="brand-tag">Shimano</span>
+          <span class="brand-tag">Continental</span>
+          <span class="brand-tag">Panaracer</span>
+          <span class="brand-tag">Vittoria</span>
+          <span class="brand-tag">WTB</span>
+          <span class="brand-tag">Kryptonite</span>
+          <span class="brand-tag">CatEye</span>
+          <span class="brand-tag">Lazer</span>
+          <span class="brand-tag">Giro</span>
+          <span class="brand-tag">Bell</span>
+        </div>
+        <p>Looking for something specific? Give us a call — with multiple distributors we can source nearly any part, and we'll tell you straight away whether we can get it and how long it'll take.</p>
+        <p><a href="tel:7726925505" class="btn btn-primary" style="margin-top:6px">Call 772-692-5505</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTALS — new. The nav pointed at #rentals and nothing was here.
+       EDIT THIS: add your actual rental rates if you want them public,
+       or leave it as "call for rates". -->
+  <section class="section section-alt" id="rentals">
+    <div class="wrap">
+      <div class="section-eyebrow">Rentals &amp; rides</div>
+      <h2 class="section-h">Ride without the commitment</h2>
+      <p class="section-sub">Visiting the Treasure Coast, or just want to try something before you buy it? Rent for the day, the weekend, or your whole vacation. Our rental fleet is well maintained and ready to roll.</p>
+      <div class="rent-grid">
+        <div class="rent">
+          <h3>Beach cruisers</h3>
+          <p>Comfortable, upright and easy — the classic way to see Jensen Beach.</p>
+        </div>
+        <div class="rent">
+          <h3>Hybrids</h3>
+          <p>A bit quicker and lighter, for riders covering more ground.</p>
+        </div>
+        <div class="rent">
+          <h3>Helmets &amp; extras</h3>
+          <p>Helmets available with every rental. Ask about locks and accessories.</p>
+        </div>
+      </div>
+      <div class="rent-cta">
+        <p><b>Rates and availability change with the season.</b> Give us a call and we'll tell you what's on the floor and what it costs — daily, weekend and weekly rates available.</p>
+        <a href="tel:7726925505" class="btn btn-primary">Call to reserve</a>
+      </div>
+    </div>
+  </section>
+
   <!-- MOBILE REPAIR STRIP -->
-  <section class="wrap">
+  <section class="wrap" style="margin-top:78px">
     <div class="strip">
       <div>
         <h2>Can't make it in? We'll come to you.</h2>
@@ -280,6 +395,22 @@
       <div class="foot-bottom">© 2026 Bikes Plus · Jensen Beach, Florida · Built by Switchback Web Co.</div>
     </div>
   </footer>
+
+<script>
+/* Close the mobile menu after a link is tapped.
+
+   Without this the menu stays open on top of the section it just
+   scrolled to, so on a phone the link appears to do nothing — you
+   land in the right place but the open menu is covering it. The
+   toggle button itself is excluded so it keeps working normally. */
+(function(){
+  var nav = document.getElementById('navlinks');
+  if(!nav) return;
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') nav.classList.remove('open');
+  });
+})();
+</script>
 
 </body>
 </html>
